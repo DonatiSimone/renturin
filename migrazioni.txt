@@ -1,0 +1,362 @@
+-- Query per generare tabella furgoni:
+
+CREATE TABLE furgoni(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    price float NOT NULL,
+    brand varchar(50) NOT NULL,
+    model varchar(50) NOT NULL,
+    km int,
+    image_path varchar NOT NULL
+);
+
+
+-- Query per generare tabella auto:
+
+CREATE TABLE auto(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    price float NOT NULL,
+    brand varchar(50) NOT NULL,
+    model varchar(50) NOT NULL,
+    km int,
+    image_path varchar NOT NULL
+);
+
+
+-- Query per generare tabella moto
+
+CREATE TABLE moto(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    price float NOT NULL,
+    brand varchar(50) NOT NULL,
+    model varchar(50) NOT NULL,
+    km int,
+    cc int NOT NULL,
+    image_path varchar NOT NULL
+);
+
+
+-- Query per generare tabella dei noleggi
+
+CREATE TABLE rental(
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL,
+    start_date DATE NOT NULL,
+    end_date DATE NOT NULL,
+    furgone_id INTEGER,
+    auto_id INTEGER,
+    moto_id INTEGER,
+    price INT NOT NULL,
+    has_full_insurance BOOLEAN NOT NULL,
+    has_navetta BOOLEAN DEFAULT 0,
+    has_seggiolino BOOLEAN DEFAULT 0,
+    has_secondo_conducente BOOLEAN DEFAULT 0,
+    FOREIGN KEY (user_id) REFERENCES user(id),
+    FOREIGN KEY (furgone_id) REFERENCES furgone(id),
+    FOREIGN KEY (auto_id) REFERENCES auto(id),
+    FOREIGN KEY (moto_id) REFERENCES moto(id)
+);
+
+
+
+-- Query per generare tabella degli utenti
+
+CREATE TABLE user(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    role VARCHAR(20) NOT NULL DEFAULT 'user',
+    first_name varchar(50) NOT NULL,
+    surname varchar(50) NOT NULL,
+    email varchar(50) NOT NULL,
+    user_password varchar(20) NOT NULL,
+    prefix varchar(50) NOT NULL,
+    phone_number varchar(50) NOT NULL,
+    birth_year varchar(50) NOT NULL,
+    birth_month varchar(50) NOT NULL,
+    birth_day varchar(50) NOT NULL,
+    driver_license_country varchar(50) NOT NULL,
+    driver_license_number varchar(50) NOT NULL,
+    driver_license_year varchar(50) NOT NULL,
+    driver_license_month varchar(50) NOT NULL,
+    driver_license_day varchar(50) NOT NULL,
+    id_card_number varchar(50) NOT NULL,
+    id_card_country varchar(50) NOT NULL,
+    id_card_year varchar(50) NOT NULL,
+    id_card_month varchar(50) NOT NULL,
+    id_card_day varchar(50) NOT NULL,
+    credit_card_number varchar(50) NOT NULL,
+    credit_card_year varchar(50) NOT NULL,
+    credit_card_month varchar(50) NOT NULL,
+    billing_address varchar(50) NOT NULL,
+    billing_address_city varchar(50) NOT NULL,
+    billing_address_country varchar(50) NOT NULL,
+    zip_code varchar(50) NOT NULL,
+    email_consent boolean default 0
+);
+
+CREATE TABLE newsletter(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    email varchar(50) NOT NULL
+);
+
+-- Query per generare tabella dei prefissi
+
+CREATE TABLE prefixes(
+    id integer PRIMARY KEY AUTOINCREMENT,
+    prefix varchar(5) NOT NULL,
+    country varchar(50) NOT NULL
+);
+
+
+-- Queries per inserire valori nella tabella dei furgoni
+
+INSERT INTO furgoni (price, brand, model, image_path) values (75, 'Ford', 'Transit Box', '/images/Ford Transit Box.png' );
+INSERT INTO furgoni (price, brand, model, image_path) values (60, 'Fiat', 'Doblò', '/images/Fiat Doblo.png' );
+INSERT INTO furgoni (price, brand, model, image_path) values (60, 'Ford', 'Transit', '/images/Ford Transit.png' );
+INSERT INTO furgoni (price, brand, model, image_path) values (70, 'Ford', 'Ranger', '/images/Ford Ranger.png' );
+
+
+-- Queries per inserire valori nella tabella delle automobili
+
+INSERT INTO auto (price, brand, model, image_path) values (100, 'Audi', 'RS6', '/images/audiRS6.png');
+INSERT INTO auto (price, brand, model, image_path) values (85, 'Tesla', 'Model 3', '/images/tesla_model_3.png');
+INSERT INTO auto (price, brand, model, image_path) values (70, 'Ford', 'Kuga', '/images/ford-kuga.png');
+INSERT INTO auto (price, brand, model, image_path) values (50, 'Panda', '4x4', '/images/panda4x4.png');
+
+
+-- Queries per inserire valori nella tabella delle moto
+
+INSERT INTO moto (price, brand, model, cc, image_path) values (30, 'Motron', 'Breezy', 50, '/images/motoron breezy.png');
+INSERT INTO moto (price, brand, model, cc, image_path) values (35, 'LEM', 'V11', 125, '/images/125.png');
+INSERT INTO moto (price, brand, model, cc, image_path) values (70, 'Ducati', 'Multistrada V2 S', 937, '/images/ducati.png');
+INSERT INTO moto (price, brand, model, cc, image_path) values (90, 'BMW', 'R1250 GS', 1250, '/images/Bmw_r1250_gs-removebg-preview.png');
+
+
+-- Queries per inserire i valori nella tabella prefissi
+
+
+INSERT INTO prefixes (prefix, country) values ('+93', 'Afghanistan');
+INSERT INTO prefixes (prefix, country) values ('+355', 'Albania');
+INSERT INTO prefixes (prefix, country) values ('+213', 'Algeria');
+INSERT INTO prefixes (prefix, country) values ('+1684', 'American Samoa');
+INSERT INTO prefixes (prefix, country) values ('+376', 'Andorra');
+INSERT INTO prefixes (prefix, country) values ('+244', 'Angola');
+INSERT INTO prefixes (prefix, country) values ('+1264', 'Anguilla');
+INSERT INTO prefixes (prefix, country) values ('+672', 'Antarctica');
+INSERT INTO prefixes (prefix, country) values ('+1268', 'Antigua and Barbuda');
+INSERT INTO prefixes (prefix, country) values ('+54', 'Argentina');
+INSERT INTO prefixes (prefix, country) values ('+374', 'Armenia');
+INSERT INTO prefixes (prefix, country) values ('+297', 'Aruba');
+INSERT INTO prefixes (prefix, country) values ('+61', 'Australia');
+INSERT INTO prefixes (prefix, country) values ('+43', 'Austria');
+INSERT INTO prefixes (prefix, country) values ('+994', 'Azerbaijan');
+INSERT INTO prefixes (prefix, country) values ('+1242', 'Bahamas');
+INSERT INTO prefixes (prefix, country) values ('+973', 'Bahrain');
+INSERT INTO prefixes (prefix, country) values ('+880', 'Bangladesh');
+INSERT INTO prefixes (prefix, country) values ('+1246', 'Barbados');
+INSERT INTO prefixes (prefix, country) values ('+375', 'Belarus');
+INSERT INTO prefixes (prefix, country) values ('+32', 'Belgium');
+INSERT INTO prefixes (prefix, country) values ('+501', 'Belize');
+INSERT INTO prefixes (prefix, country) values ('+229', 'Benin');
+INSERT INTO prefixes (prefix, country) values ('+1441', 'Bermuda');
+INSERT INTO prefixes (prefix, country) values ('+975', 'Bhutan');
+INSERT INTO prefixes (prefix, country) values ('+591', 'Bolivia');
+INSERT INTO prefixes (prefix, country) values ('+387', 'Bosnia and Herzegovina');
+INSERT INTO prefixes (prefix, country) values ('+267', 'Botswana');
+INSERT INTO prefixes (prefix, country) values ('+55', 'Brazil');
+INSERT INTO prefixes (prefix, country) values ('+246', 'British Indian Ocean Territory');
+INSERT INTO prefixes (prefix, country) values ('+1284', 'British Virgin Islands');
+INSERT INTO prefixes (prefix, country) values ('+673', 'Brunei');
+INSERT INTO prefixes (prefix, country) values ('+359', 'Bulgaria');
+INSERT INTO prefixes (prefix, country) values ('+226', 'Burkina Faso');
+INSERT INTO prefixes (prefix, country) values ('+257', 'Burundi');
+INSERT INTO prefixes (prefix, country) values ('+855', 'Cambodia');
+INSERT INTO prefixes (prefix, country) values ('+237', 'Cameroon');
+INSERT INTO prefixes (prefix, country) values ('+1', 'Canada');
+INSERT INTO prefixes (prefix, country) values ('+238', 'Cape Verde');
+INSERT INTO prefixes (prefix, country) values ('+1345', 'Cayman Islands');
+INSERT INTO prefixes (prefix, country) values ('+236', 'Central African Republic');
+INSERT INTO prefixes (prefix, country) values ('+235', 'Chad');
+INSERT INTO prefixes (prefix, country) values ('+56', 'Chile');
+INSERT INTO prefixes (prefix, country) values ('+86', 'China');
+INSERT INTO prefixes (prefix, country) values ('+61', 'Christmas Island');
+INSERT INTO prefixes (prefix, country) values ('+61', 'Cocos Islands');
+INSERT INTO prefixes (prefix, country) values ('+57', 'Colombia');
+INSERT INTO prefixes (prefix, country) values ('+269', 'Comoros');
+INSERT INTO prefixes (prefix, country) values ('+682', 'Cook Islands');
+INSERT INTO prefixes (prefix, country) values ('+506', 'Costa Rica');
+INSERT INTO prefixes (prefix, country) values ('+385', 'Croatia');
+INSERT INTO prefixes (prefix, country) values ('+53', 'Cuba');
+INSERT INTO prefixes (prefix, country) values ('+599', 'Curacao');
+INSERT INTO prefixes (prefix, country) values ('+357', 'Cyprus');
+INSERT INTO prefixes (prefix, country) values ('+420', 'Czech Republic');
+INSERT INTO prefixes (prefix, country) values ('+243', 'Democratic Republic of the Congo');
+INSERT INTO prefixes (prefix, country) values ('+45', 'Denmark');
+INSERT INTO prefixes (prefix, country) values ('+253', 'Djibouti');
+INSERT INTO prefixes (prefix, country) values ('+1767', 'Dominica');
+INSERT INTO prefixes (prefix, country) values ('+1809', 'Dominican Republic');
+INSERT INTO prefixes (prefix, country) values ('+593', 'Ecuador');
+INSERT INTO prefixes (prefix, country) values ('+20', 'Egypt');
+INSERT INTO prefixes (prefix, country) values ('+503', 'El Salvador');
+INSERT INTO prefixes (prefix, country) values ('+240', 'Equatorial Guinea');
+INSERT INTO prefixes (prefix, country) values ('+291', 'Eritrea');
+INSERT INTO prefixes (prefix, country) values ('+372', 'Estonia');
+INSERT INTO prefixes (prefix, country) values ('+251', 'Ethiopia');
+INSERT INTO prefixes (prefix, country) values ('+500', 'Falkland Islands');
+INSERT INTO prefixes (prefix, country) values ('+298', 'Faroe Islands');
+INSERT INTO prefixes (prefix, country) values ('+679', 'Fiji');
+INSERT INTO prefixes (prefix, country) values ('+358', 'Finland');
+INSERT INTO prefixes (prefix, country) values ('+33', 'France');
+INSERT INTO prefixes (prefix, country) values ('+594', 'French Guiana');
+INSERT INTO prefixes (prefix, country) values ('+689', 'French Polynesia');
+INSERT INTO prefixes (prefix, country) values ('+241', 'Gabon');
+INSERT INTO prefixes (prefix, country) values ('+220', 'Gambia');
+INSERT INTO prefixes (prefix, country) values ('+995', 'Georgia');
+INSERT INTO prefixes (prefix, country) values ('+49', 'Germany');
+INSERT INTO prefixes (prefix, country) values ('+233', 'Ghana');
+INSERT INTO prefixes (prefix, country) values ('+350', 'Gibraltar');
+INSERT INTO prefixes (prefix, country) values ('+30', 'Greece');
+INSERT INTO prefixes (prefix, country) values ('+299', 'Greenland');
+INSERT INTO prefixes (prefix, country) values ('+1473', 'Grenada');
+INSERT INTO prefixes (prefix, country) values ('+590', 'Guadeloupe');
+INSERT INTO prefixes (prefix, country) values ('+1671', 'Guam');
+INSERT INTO prefixes (prefix, country) values ('+502', 'Guatemala');
+INSERT INTO prefixes (prefix, country) values ('+224', 'Guinea');
+INSERT INTO prefixes (prefix, country) values ('+245', 'Guinea-Bissau');
+INSERT INTO prefixes (prefix, country) values ('+592', 'Guyana');
+INSERT INTO prefixes (prefix, country) values ('+509', 'Haiti');
+INSERT INTO prefixes (prefix, country) values ('+504', 'Honduras');
+INSERT INTO prefixes (prefix, country) values ('+852', 'Hong Kong');
+INSERT INTO prefixes (prefix, country) values ('+36', 'Hungary');
+INSERT INTO prefixes (prefix, country) values ('+354', 'Iceland');
+INSERT INTO prefixes (prefix, country) values ('+91', 'India');
+INSERT INTO prefixes (prefix, country) values ('+62', 'Indonesia');
+INSERT INTO prefixes (prefix, country) values ('+98', 'Iran');
+INSERT INTO prefixes (prefix, country) values ('+964', 'Iraq');
+INSERT INTO prefixes (prefix, country) values ('+353', 'Ireland');
+INSERT INTO prefixes (prefix, country) values ('+972', 'Israel');
+INSERT INTO prefixes (prefix, country) values ('+39', 'Italy');
+INSERT INTO prefixes (prefix, country) values ('+1876', 'Jamaica');
+INSERT INTO prefixes (prefix, country) values ('+81', 'Japan');
+INSERT INTO prefixes (prefix, country) values ('+962', 'Jordan');
+INSERT INTO prefixes (prefix, country) values ('+7', 'Kazakhstan');
+INSERT INTO prefixes (prefix, country) values ('+254', 'Kenya');
+INSERT INTO prefixes (prefix, country) values ('+686', 'Kiribati');
+INSERT INTO prefixes (prefix, country) values ('+965', 'Kuwait');
+INSERT INTO prefixes (prefix, country) values ('+996', 'Kyrgyzstan');
+INSERT INTO prefixes (prefix, country) values ('+856', 'Laos');
+INSERT INTO prefixes (prefix, country) values ('+371', 'Latvia');
+INSERT INTO prefixes (prefix, country) values ('+961', 'Lebanon');
+INSERT INTO prefixes (prefix, country) values ('+266', 'Lesotho');
+INSERT INTO prefixes (prefix, country) values ('+231', 'Liberia');
+INSERT INTO prefixes (prefix, country) values ('+218', 'Libya');
+INSERT INTO prefixes (prefix, country) values ('+423', 'Liechtenstein');
+INSERT INTO prefixes (prefix, country) values ('+370', 'Lithuania');
+INSERT INTO prefixes (prefix, country) values ('+352', 'Luxembourg');
+INSERT INTO prefixes (prefix, country) values ('+853', 'Macau');
+INSERT INTO prefixes (prefix, country) values ('+389', 'Macedonia');
+INSERT INTO prefixes (prefix, country) values ('+261', 'Madagascar');
+INSERT INTO prefixes (prefix, country) values ('+265', 'Malawi');
+INSERT INTO prefixes (prefix, country) values ('+60', 'Malaysia');
+INSERT INTO prefixes (prefix, country) values ('+960', 'Maldives');
+INSERT INTO prefixes (prefix, country) values ('+223', 'Mali');
+INSERT INTO prefixes (prefix, country) values ('+356', 'Malta');
+INSERT INTO prefixes (prefix, country) values ('+692', 'Marshall Islands');
+INSERT INTO prefixes (prefix, country) values ('+596', 'Martinique');
+INSERT INTO prefixes (prefix, country) values ('+222', 'Mauritania');
+INSERT INTO prefixes (prefix, country) values ('+230', 'Mauritius');
+INSERT INTO prefixes (prefix, country) values ('+262', 'Mayotte');
+INSERT INTO prefixes (prefix, country) values ('+52', 'Mexico');
+INSERT INTO prefixes (prefix, country) values ('+691', 'Micronesia');
+INSERT INTO prefixes (prefix, country) values ('+373', 'Moldova');
+INSERT INTO prefixes (prefix, country) values ('+377', 'Monaco');
+INSERT INTO prefixes (prefix, country) values ('+976', 'Mongolia');
+INSERT INTO prefixes (prefix, country) values ('+382', 'Montenegro');
+INSERT INTO prefixes (prefix, country) values ('+1664', 'Montserrat');
+INSERT INTO prefixes (prefix, country) values ('+212', 'Morocco');
+INSERT INTO prefixes (prefix, country) values ('+258', 'Mozambique');
+INSERT INTO prefixes (prefix, country) values ('+95', 'Myanmar');
+INSERT INTO prefixes (prefix, country) values ('+264', 'Namibia');
+INSERT INTO prefixes (prefix, country) values ('+674', 'Nauru');
+INSERT INTO prefixes (prefix, country) values ('+977', 'Nepal');
+INSERT INTO prefixes (prefix, country) values ('+31', 'Netherlands');
+INSERT INTO prefixes (prefix, country) values ('+599', 'Netherlands Antilles');
+INSERT INTO prefixes (prefix, country) values ('+687', 'New Caledonia');
+INSERT INTO prefixes (prefix, country) values ('+64', 'New Zealand');
+INSERT INTO prefixes (prefix, country) values ('+505', 'Nicaragua');
+INSERT INTO prefixes (prefix, country) values ('+227', 'Niger');
+INSERT INTO prefixes (prefix, country) values ('+234', 'Nigeria');
+INSERT INTO prefixes (prefix, country) values ('+683', 'Niue');
+INSERT INTO prefixes (prefix, country) values ('+672', 'Norfolk Island');
+INSERT INTO prefixes (prefix, country) values ('+850', 'North Korea');
+INSERT INTO prefixes (prefix, country) values ('+1670', 'Northern Mariana Islands');
+INSERT INTO prefixes (prefix, country) values ('+47', 'Norway');
+INSERT INTO prefixes (prefix, country) values ('+968', 'Oman');
+INSERT INTO prefixes (prefix, country) values ('+92', 'Pakistan');
+INSERT INTO prefixes (prefix, country) values ('+680', 'Palau');
+INSERT INTO prefixes (prefix, country) values ('+970', 'Palestine');
+INSERT INTO prefixes (prefix, country) values ('+507', 'Panama');
+INSERT INTO prefixes (prefix, country) values ('+675', 'Papua New Guinea');
+INSERT INTO prefixes (prefix, country) values ('+595', 'Paraguay');
+INSERT INTO prefixes (prefix, country) values ('+51', 'Peru');
+INSERT INTO prefixes (prefix, country) values ('+63', 'Philippines');
+INSERT INTO prefixes (prefix, country) values ('+48', 'Poland');
+INSERT INTO prefixes (prefix, country) values ('+351', 'Portugal');
+INSERT INTO prefixes (prefix, country) values ('+1787', 'Puerto Rico');
+INSERT INTO prefixes (prefix, country) values ('+974', 'Qatar');
+INSERT INTO prefixes (prefix, country) values ('+242', 'Republic of the Congo');
+INSERT INTO prefixes (prefix, country) values ('+40', 'Romania');
+INSERT INTO prefixes (prefix, country) values ('+7', 'Russia');
+INSERT INTO prefixes (prefix, country) values ('+250', 'Rwanda');
+INSERT INTO prefixes (prefix, country) values ('+262', 'Reunion');
+INSERT INTO prefixes (prefix, country) values ('+685', 'Samoa');
+INSERT INTO prefixes (prefix, country) values ('+378', 'San Marino');
+INSERT INTO prefixes (prefix, country) values ('+239', 'Sao Tome and Principe');
+INSERT INTO prefixes (prefix, country) values ('+966', 'Saudi Arabia');
+INSERT INTO prefixes (prefix, country) values ('+221', 'Senegal');
+INSERT INTO prefixes (prefix, country) values ('+381', 'Serbia');
+INSERT INTO prefixes (prefix, country) values ('+248', 'Seychelles');
+INSERT INTO prefixes (prefix, country) values ('+232', 'Sierra Leone');
+INSERT INTO prefixes (prefix, country) values ('+65', 'Singapore');
+INSERT INTO prefixes (prefix, country) values ('+421', 'Slovakia');
+INSERT INTO prefixes (prefix, country) values ('+386', 'Slovenia');
+INSERT INTO prefixes (prefix, country) values ('+677', 'Solomon Islands');
+INSERT INTO prefixes (prefix, country) values ('+252', 'Somalia');
+INSERT INTO prefixes (prefix, country) values ('+27', 'South Africa');
+INSERT INTO prefixes (prefix, country) values ('+82', 'South Korea');
+INSERT INTO prefixes (prefix, country) values ('+211', 'South Sudan');
+INSERT INTO prefixes (prefix, country) values ('+34', 'Spain');
+INSERT INTO prefixes (prefix, country) values ('+94', 'Sri Lanka');
+INSERT INTO prefixes (prefix, country) values ('+249', 'Sudan');
+INSERT INTO prefixes (prefix, country) values ('+597', 'Suriname');
+INSERT INTO prefixes (prefix, country) values ('+268', 'Swaziland');
+INSERT INTO prefixes (prefix, country) values ('+46', 'Sweden');
+INSERT INTO prefixes (prefix, country) values ('+41', 'Switzerland');
+INSERT INTO prefixes (prefix, country) values ('+963', 'Syria');
+INSERT INTO prefixes (prefix, country) values ('+886', 'Taiwan');
+INSERT INTO prefixes (prefix, country) values ('+992', 'Tajikistan');
+INSERT INTO prefixes (prefix, country) values ('+255', 'Tanzania');
+INSERT INTO prefixes (prefix, country) values ('+66', 'Thailand');
+INSERT INTO prefixes (prefix, country) values ('+228', 'Togo');
+INSERT INTO prefixes (prefix, country) values ('+690', 'Tokelau');
+INSERT INTO prefixes (prefix, country) values ('+676', 'Tonga');
+INSERT INTO prefixes (prefix, country) values ('+1868', 'Trinidad and Tobago');
+INSERT INTO prefixes (prefix, country) values ('+216', 'Tunisia');
+INSERT INTO prefixes (prefix, country) values ('+90', 'Turkey');
+INSERT INTO prefixes (prefix, country) values ('+993', 'Turkmenistan');
+INSERT INTO prefixes (prefix, country) values ('+1649', 'Turks and Caicos Islands');
+INSERT INTO prefixes (prefix, country) values ('+688', 'Tuvalu');
+INSERT INTO prefixes (prefix, country) values ('+256', 'Uganda');
+INSERT INTO prefixes (prefix, country) values ('+380', 'Ukraine');
+INSERT INTO prefixes (prefix, country) values ('+971', 'United Arab Emirates');
+INSERT INTO prefixes (prefix, country) values ('+44', 'United Kingdom');
+INSERT INTO prefixes (prefix, country) values ('+1', 'United States');
+INSERT INTO prefixes (prefix, country) values ('+598', 'Uruguay');
+INSERT INTO prefixes (prefix, country) values ('+998', 'Uzbekistan');
+INSERT INTO prefixes (prefix, country) values ('+678', 'Vanuatu');
+INSERT INTO prefixes (prefix, country) values ('+58', 'Venezuela');
+INSERT INTO prefixes (prefix, country) values ('+84', 'Vietnam');
+INSERT INTO prefixes (prefix, country) values ('+681', 'Wallis and Futuna');
+INSERT INTO prefixes (prefix, country) values ('+970', 'Western Sahara');
+INSERT INTO prefixes (prefix, country) values ('+967', 'Yemen');
+INSERT INTO prefixes (prefix, country) values ('+260', 'Zambia');
+INSERT INTO prefixes (prefix, country) values ('+263', 'Zimbabwe');
+

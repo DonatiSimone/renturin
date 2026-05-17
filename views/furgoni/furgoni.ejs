@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/custom.css">
+    <title>Furgoni</title>
+    <style>
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top text-white custom-bg-color-2">
+        <div class="container ">
+            <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="Renturin Logo" width="60" height="60"></a>
+            <a class="navbar-brand custom-font text-white" href="/">Renturin</a>
+            <button class="navbar-toggler color-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto pt-2">
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/auto">Noleggio auto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/furgoni">Noleggio furgoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/moto">Noleggio Moto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/contact">Contattaci</a>
+                    </li>
+                </ul>
+
+            </div>
+            <span class="nav-item">
+                <% if (user) { %>
+                    <a class="nav-link custom-color-white pt-2" href="/profile"><%= "Benvenuto " %><%= user.first_name %></a> <!-- Adjust the href to point to the profile page -->
+                <% } else { %>
+                    <a class="nav-link custom-color-white pt-2" href="/log">Login/Registrati</a>
+                <% } %>
+            </span>
+        </div>
+    </nav>
+
+    <div class="background-image-3 d-flex justify-content-center align-items-center vh-100">
+        <div data-page="1" class="container text-center bg-white p-4 rounded col-md-8 col-lg-6">
+            <div class="container">
+                <h1 class="mt-4 mb-5">Inserisci i dati per il noleggio</h1>
+                <% if (errorMessage) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= errorMessage %>
+                    </div>
+                <% } %>
+                <form action="/furgoni/sceltafurgone" method="POST">
+                    <div class="form-group mb-4">
+                        <label for="start_date">Data Inizio Noleggio *</label>
+                        <input type="date" class="form-control" id="start_date" name="start_date" min="<%= new Date().toISOString().split('T')[0] %>" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="end_date">Data Fine Noleggio *</label>
+                        <input type="date" class="form-control" id="end_date" name="end_date" min="<%= new Date().toISOString().split('T')[0] %>" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="age">Età del Conducente *</label>
+                        <select type="number" class="form-control" id="age" name="age" required>
+                            <option value="eta1">21-24</option>
+                            <option value="eta2">25-29</option>
+                            <option value="eta3">30+</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg" >Controlla disponibilità</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <footer class="custom-bg-color-2 py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <a href="/auto" class="text-white">Auto</a>
+                </div>
+                <div class="col">
+                    <a href="/furgoni" class="text-white">Furgoni</a>
+                </div>
+                <div class="col">
+                    <a href="/moto" class="text-white">Moto</a>
+                </div>
+                <div class="col">
+                    <a href="/chisiamo" class="text-white">Chi siamo</a>
+                </div>
+                <div class="col">
+                    <a href="/privacy" class="text-white">Privacy e sicurezza</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <footer class="custom-bg-color-3 text-center py-3">
+        <p class="color-white mb-0">© 2024 Renturin. Tutti i diritti riservati.</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

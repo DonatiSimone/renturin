@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/custom.css">
+    <title>Termini e condizioni</title>
+    <style>
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top text-white custom-bg-color-2">
+        <div class="container ">
+            <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="Renturin Logo" width="60" height="60"></a>
+            <a class="navbar-brand custom-font text-white" href="/">Renturin</a>
+            <button class="navbar-toggler color-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto pt-2">
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/auto">Noleggio auto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/furgoni">Noleggio furgoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/moto">Noleggio Moto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/contact">Contattaci</a>
+                    </li>
+                </ul>
+
+            </div>
+            <span class="nav-item">
+                <% if (user) { %>
+                    <a class="nav-link custom-color-white pt-2" href="/profile"><%= "Benvenuto " %><%= user.first_name %></a> <!-- Adjust the href to point to the profile page -->
+                <% } else { %>
+                    <a class="nav-link custom-color-white pt-2" href="/log">Login/Registrati</a>
+                <% } %>
+            </span>
+        </div>
+    </nav>
+<div class="container my-5 p-4 border rounded shadow-sm bg-white">
+    <div class="text-center mb-4">
+        <h1>Termini e Condizioni</h1>
+    </div>
+
+    <div class="mb-4">
+        <p>Benvenuti nella sezione "Termini e Condizioni" di Renturin. Questi termini regolano l'utilizzo del nostro sito e dei nostri servizi di noleggio auto. Utilizzando il nostro sito, accetti questi termini e condizioni. Se non sei d'accordo con questi termini, ti preghiamo di non utilizzare i nostri servizi.</p>
+    </div>
+
+    <div class="mb-4">
+        <h2>Requisiti per il Noleggio</h2>
+        <p>Per noleggiare un veicolo con noi, devi soddisfare i seguenti requisiti:</p>
+        <ul class="list-unstyled">
+            <li><strong>Età minima:</strong> 21 anni.</li>
+            <li><strong>Patente di guida:</strong> Valida da almeno 2 anni.</li>
+            <li><strong>Carta di credito:</strong> Necessaria per il pagamento e il deposito di sicurezza.</li>
+            <li><strong>Documento d'identità:</strong> Valido al momento del noleggio.</li>
+        </ul>
+    </div>
+
+    <div class="mb-4">
+        <h2>Contratto di Noleggio</h2>
+        <p>Il contratto di noleggio deve essere firmato al momento del ritiro del veicolo. Il contratto specifica le condizioni di noleggio, inclusi i termini di restituzione e le responsabilità del locatario.</p>
+    </div>
+
+    <div class="mb-4">
+        <h2>Assicurazione</h2>
+        <p>Tutti i veicoli sono coperti da assicurazione. Tuttavia, è responsabilità del locatario verificare le condizioni di assicurazione e le eventuali franchigie applicabili.</p>
+    </div>
+
+    <div class="mb-4">
+        <h2>Politica del Carburante</h2>
+        <p>I veicoli devono essere restituiti con lo stesso livello di carburante presente al momento del ritiro. In caso contrario, verranno addebitati i costi di rifornimento.</p>
+    </div>
+
+    <div class="mb-4">
+        <h2>Tariffe e Addebiti</h2>
+        <p>Le tariffe per il noleggio sono specificate al momento della prenotazione. Addebiti aggiuntivi possono essere applicati per ritardi nella restituzione, danni al veicolo o altre violazioni del contratto.</p>
+    </div>
+
+    <div class="mb-4">
+        <h2>Politica di Cancellazione</h2>
+        <p>Le cancellazioni possono essere effettuate fino a 24 ore prima del ritiro senza penali. Le cancellazioni effettuate meno di 24 ore prima del ritiro possono comportare addebiti.</p>
+    </div>
+
+    <div class="mb-4">
+        <h2>Informazioni di Contatto</h2>
+        <p>Per domande o dubbi riguardanti questi termini e condizioni, vi preghiamo di contattarci all'indirizzo email fornito nella sezione Contattaci.</p>
+    </div>
+
+    <div class="mb-4">
+        <h2>Aggiornamenti dei Termini</h2>
+        <p>Renturin si riserva il diritto di aggiornare questi termini e condizioni in qualsiasi momento. Le modifiche saranno pubblicate su questa pagina e saranno efficaci immediatamente.</p>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-3b6we6Y7KmSgZmgZ7O9RNU2WyRz88P2bXaOdGVO2uT3GZW9iCvwJvhrQdYXyEek5" crossorigin="anonymous"></script>
+</body>
+</html>

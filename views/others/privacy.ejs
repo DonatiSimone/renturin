@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/custom.css">
+    <title>Privacy</title>
+    <style>
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top text-white custom-bg-color-2">
+        <div class="container ">
+            <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="Renturin Logo" width="60" height="60"></a>
+            <a class="navbar-brand custom-font text-white" href="/">Renturin</a>
+            <button class="navbar-toggler color-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto pt-2">
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/auto">Noleggio auto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/furgoni">Noleggio furgoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/moto">Noleggio Moto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/contact">Contattaci</a>
+                    </li>
+                </ul>
+
+            </div>
+            <span class="nav-item">
+                <% if (user) { %>
+                    <a class="nav-link custom-color-white pt-2" href="/profile"><%= "Benvenuto " %><%= user.first_name %></a> <!-- Adjust the href to point to the profile page -->
+                <% } else { %>
+                    <a class="nav-link custom-color-white pt-2" href="/log">Login/Registrati</a>
+                <% } %>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container my-5 p-4 border rounded shadow-sm bg-white">
+        <div class="text-center mb-4">
+            <h1>Privacy e Sicurezza</h1>
+        </div>
+
+        <div class="mb-4">
+            <p>Benvenuti nella sezione "Privacy e Sicurezza" di Renturin. Il nostro impegno per la protezione dei vostri dati personali è una delle nostre priorità.<br>
+            Di seguito troverete tutte le informazioni su come raccogliamo, utilizziamo e proteggiamo i vostri dati quando utilizzate il nostro sito web e i nostri servizi di noleggio auto.<br>
+            Vi invitiamo a leggere attentamente questa informativa per comprendere le nostre pratiche.</p>
+        </div>
+
+        <div class="mb-4">
+            <h2>Raccolta dei Dati Personali</h2>
+            <p>Quando utilizzate il nostro sito web o i nostri servizi, potremmo raccogliere i seguenti dati personali:</p>
+            <ul class="list-unstyled">
+                <li><strong>Informazioni di contatto:</strong> nome, cognome, indirizzo email, numero di telefono, indirizzo di residenza.</li>
+                <li><strong>Informazioni di pagamento:</strong> dati della carta di credito o debito, altri dettagli necessari per la transazione.</li>
+                <li><strong>Dati di identificazione:</strong> numero di patente di guida, codice fiscale, dati del passaporto o della carta d'identità, ove richiesto per il noleggio.</li>
+                <li><strong>Informazioni di utilizzo del sito:</strong> indirizzo IP, dati di navigazione, cookie, e altre informazioni relative alle vostre interazioni con il sito.</li>
+                <li><strong>Dati di noleggio:</strong> dettagli sui veicoli noleggiati, la durata del noleggio e le preferenze personali in relazione ai servizi.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h2>Come Utilizziamo i Vostri Dati</h2>
+            <p>I dati raccolti vengono utilizzati per offrirvi il miglior servizio possibile e per garantire un'esperienza di noleggio auto senza problemi. Nello specifico, i vostri dati vengono utilizzati per:</p>
+            <ul class="list-unstyled">
+                <li><strong>Gestione delle prenotazioni:</strong> Elaborazione delle richieste di noleggio, conferma delle prenotazioni, e gestione di eventuali modifiche o cancellazioni.</li>
+                <li><strong>Pagamenti sicuri:</strong> Utilizziamo i vostri dati per completare le transazioni finanziarie e garantirne la sicurezza.</li>
+                <li><strong>Comunicazioni:</strong> Vi contatteremo tramite email o telefono per fornire informazioni relative al vostro noleggio, conferme di prenotazione e promozioni speciali.</li>
+                <li><strong>Miglioramento del servizio:</strong> I dati raccolti ci aiutano a personalizzare i nostri servizi in base alle vostre esigenze, migliorare l'esperienza utente e ottimizzare il nostro sito.</li>
+                <li><strong>Conformità legale:</strong> Potremmo essere tenuti a conservare alcune informazioni per adempiere agli obblighi di legge e normativi.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h2>Protezione e Sicurezza dei Dati</h2>
+            <p>La sicurezza dei vostri dati personali è per noi fondamentale. Per garantire la loro protezione, adottiamo le seguenti misure:</p>
+            <ul class="list-unstyled">
+                <li><strong>Crittografia:</strong> Utilizziamo protocolli di crittografia avanzata (SSL) per proteggere le informazioni trasmesse tramite il nostro sito web.</li>
+                <li><strong>Accesso limitato:</strong> Solo il personale autorizzato ha accesso ai vostri dati personali, e tutte le informazioni sono trattate in maniera confidenziale.</li>
+                <li><strong>Sicurezza dei pagamenti:</strong> Collaboriamo con fornitori di servizi di pagamento certificati che garantiscono transazioni sicure e protette.</li>
+                <li><strong>Backup e monitoraggio:</strong> Effettuiamo regolarmente backup dei dati e monitoriamo costantemente il nostro sistema per prevenire e rilevare eventuali accessi non autorizzati.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h2>Condivisione dei Dati</h2>
+            <p>Renturin non vende, affitta o scambia i vostri dati personali con terze parti per fini commerciali. Tuttavia, potremmo condividere i vostri dati con:</p>
+            <ul class="list-unstyled">
+                <li><strong>Fornitori di servizi terzi:</strong> Come partner di pagamento, gestori del sistema di prenotazione, o servizi di assistenza clienti, che necessitano di accedere ai vostri dati per svolgere le loro funzioni.</li>
+                <li><strong>Autorità competenti:</strong> Qualora fosse richiesto dalla legge o in seguito a procedimenti legali, potremmo condividere i vostri dati con enti governativi o autorità legali.</li>
+            </ul>
+        </div>
+
+        <div class="mb-4">
+            <h2>I Vostri Diritti</h2>
+            <p>Avete il diritto di:</p>
+            <ul class="list-unstyled">
+                <li><strong>Accedere ai vostri dati personali:</strong> per verificarne la correttezza e richiedere copie.</li>
+                <li><strong>Modificare o aggiornare le informazioni errate o incomplete.</strong></li>
+                <li><strong>Richiedere la cancellazione dei vostri dati:</strong> salvo quando obbligati a conservarli per motivi legali.</li>
+                <li><strong>Opporvi al trattamento dei vostri dati:</strong> per scopi di marketing diretto.</li>
+            </ul>
+            <p>Per esercitare questi diritti o per ulteriori informazioni, potete contattarci direttamente all'indirizzo email fornito nella sezione Contatti.</p>
+        </div>
+
+        <div class="mb-4">
+            <h2>Cookie</h2>
+            <p>Il nostro sito utilizza cookie per migliorare la vostra esperienza di navigazione.<br>
+            I cookie sono piccoli file di testo che vengono memorizzati sul vostro dispositivo per raccogliere informazioni su come navigate il nostro sito.<br>
+            Potete gestire o disabilitare i cookie dalle impostazioni del vostro browser, anche se questo potrebbe influire sulla funzionalità del sito.</p>
+        </div>
+
+        <div class="mb-4">
+            <h2>Aggiornamenti della Privacy Policy</h2>
+            <p>Renturin si riserva il diritto di aggiornare la presente Informativa sulla Privacy in qualsiasi momento, per conformarsi a eventuali cambiamenti normativi o miglioramenti delle nostre pratiche.<br>
+            Qualsiasi modifica sarà pubblicata su questa pagina con indicazione della data di aggiornamento.</p>
+        </div>
+    </div>
+
+</body>
+</html>

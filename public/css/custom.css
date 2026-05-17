@@ -1,0 +1,145 @@
+body
+{
+  font-family:Arial;
+  /* background-color: rgba(72,92,103,255); */
+
+  /* background-color: rgb(124, 147, 195); */
+
+  background-color: rgb(64, 93, 114);
+
+}
+
+@font-face {
+    font-family: 'Fragmentcore';
+    src: url('public/fonts/Fragmentcore.otf') format('opentype');
+}
+
+
+.spacing-class-20{
+    margin-right: 50px;
+}
+
+.custom-font{
+    font-family: 'Fragmentcore';
+    font-size: 55px; color: white;
+}
+
+.custom-bg-color-1{
+    background-color: rgb(50, 50, 50);
+}
+
+.custom-bg-color-2{
+    /* background-color: rgb(96, 91, 91); */
+
+    /* background-color: rgb(85, 103, 156); */
+
+    background-color: rgb(117, 134, 148);
+
+}
+
+.custom-bg-color-3{
+    /* background-color: rgb(67, 63, 63); */
+
+    /* background-color: rgb(30, 42, 94); */
+
+    background-color: rgb(170, 175, 182);
+}
+
+.custom-bg-color-4{
+    background-color: rgb(64, 93, 114);
+}
+
+.custom-color-white{
+    color: white;
+}
+
+.background-image-1, .background-image-2, .background-image-3, .background-image-4 {
+    background-size: cover;
+    background-position: center;
+}
+.background-image-1{
+    background-image: url('/images/bgturin2.png');
+}
+.background-image-2{
+    background-image: url('/images/map.png');
+}
+.background-image-3{
+    background-image: url('/images/furgone.png');
+}
+.background-image-4{
+    background-image: url('/images/moto.png');
+}
+
+.slideshow-container {
+    position: relative;
+}
+.mySlides {
+    display: none;
+}
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+.prev {
+    left: 0px;
+}
+
+.next {
+    right: 0px;
+    border-radius: 3px 0 0 3px;
+}
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
+}
+.footer-color-1 {
+    background-color: #343a40;
+}
+.footer-color-2 {
+    background-color: #23272b;
+}
+.color-white {
+    color: white;
+}
+.auto-margin {
+    margin: 0 auto;
+}
+
+.prev, .next {
+    text-decoration: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    cursor: pointer;
+}
+
+.prev {
+    left: 0;
+}
+
+.next {
+    right: 0;
+}

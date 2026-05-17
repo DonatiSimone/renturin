@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/custom.css">
+    <title>Chi Siamo</title>
+    <style>
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top text-white custom-bg-color-2">
+        <div class="container ">
+            <a class="navbar-brand" href="/"><img src="/images/logo.png" alt="Renturin Logo" width="60" height="60"></a>
+            <a class="navbar-brand custom-font text-white" href="/">Renturin</a>
+            <button class="navbar-toggler color-white" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon "></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto pt-2">
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/auto">Noleggio auto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/furgoni">Noleggio furgoni</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/moto">Noleggio Moto</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link custom-color-white" href="/contact">Contattaci</a>
+                    </li>
+                </ul>
+
+            </div>
+            <span class="nav-item">
+                <% if (user) { %>
+                    <a class="nav-link custom-color-white pt-2" href="/profile"><%= "Benvenuto " %><%= user.first_name %></a> <!-- Adjust the href to point to the profile page -->
+                <% } else { %>
+                    <a class="nav-link custom-color-white pt-2" href="/log">Login/Registrati</a>
+                <% } %>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container my-5 p-4 border rounded shadow-sm bg-white">
+        <div class="text-center mb-4">
+            <h1>Chi Siamo</h1>
+        </div>
+
+        <div class="mb-5">
+            <p>Benvenuti su Renturin, il vostro partner di fiducia per il noleggio auto nella splendida città di Torino.<br>
+            Siamo un'azienda locale con anni di esperienza nel settore dell'autonoleggio, nata dalla passione per l'automobilismo e dall'amore per la nostra città.<br>
+            La nostra missione è fornire un servizio di noleggio auto che unisca qualità, convenienza e affidabilità, permettendovi di esplorare Torino e i suoi dintorni in totale libertà.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2>La Nostra Storia</h2>
+            <p>Renturin è stata fondata nel 2010 con l'obiettivo di offrire un'alternativa locale alle grandi catene di noleggio internazionali.<br>
+            Siamo partiti con una piccola flotta di auto, ma grazie alla fiducia dei nostri clienti e al nostro impegno costante, siamo cresciuti rapidamente,<br>
+            diventando un punto di riferimento per chi cerca un servizio personalizzato e su misura.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2>La Nostra Filosofia</h2>
+            <p>Crediamo che ogni viaggio sia unico e per questo ci impegniamo a offrire soluzioni flessibili che possano soddisfare le diverse esigenze dei nostri clienti.<br>
+            Che si tratti di un breve soggiorno in città, di una vacanza in famiglia, o di un viaggio di lavoro, abbiamo il veicolo giusto per voi.<br>
+            Ogni nostra auto è selezionata con cura, regolarmente manutenuta e dotata di tutte le comodità necessarie per garantirvi un'esperienza di guida sicura e confortevole.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2>Cosa Offriamo</h2>
+            <ul class="list-unstyled">
+                <li><strong>Ampia Scelta di Veicoli:</strong> Dalle city car compatte ai SUV spaziosi, passando per berline eleganti e auto di lusso, la nostra flotta copre una vasta gamma di esigenze.</li>
+                <li><strong>Servizio Clienti Eccellente:</strong> Il nostro team di esperti è sempre pronto ad assistervi, offrendovi consigli personalizzati e supporto durante tutto il periodo di noleggio.</li>
+                <li><strong>Tariffe Competitive:</strong> Offriamo prezzi trasparenti e convenienti, senza costi nascosti, con pacchetti di noleggio flessibili per adattarsi al meglio al vostro budget.</li>
+                <li><strong>Sicurezza Garantita:</strong> Tutti i nostri veicoli sono sottoposti a rigorosi controlli di sicurezza e sono dotati di assicurazione completa, per garantirvi tranquillità su ogni strada.</li>
+            </ul>
+        </div>
+
+        <div class="mb-5">
+            <h2>La Nostra Sede</h2>
+            <p>Il nostro ufficio si trova nel cuore di Torino, a pochi passi dai principali punti di interesse della città.<br>
+            Questo ci permette di essere sempre vicini ai nostri clienti e di offrire un servizio rapido ed efficiente.<br>
+            Inoltre, offriamo la possibilità di consegna e ritiro del veicolo presso l'indirizzo desiderato, per rendere il vostro viaggio ancora più comodo.</p>
+        </div>
+
+        <div class="mb-5">
+            <h2>Contattaci</h2>
+            <p>Se avete domande o desiderate prenotare un veicolo, non esitate a contattarci. Il nostro team è a vostra disposizione per aiutarvi a pianificare il vostro viaggio nel modo migliore.</p>
+        </div>
+    </div>
+
+</body>
+</html>
