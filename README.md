@@ -52,23 +52,6 @@ The project was developed with a focus on modular routing, and clean backend org
 
 ---
 
-## Project Structure
-
-```txt
-renturin/
-│
-├── models/
-├── public/
-├── routes/
-├── views/
-├── app.js
-├── package.json
-├── renturin.db
-└── README.md
-```
-
----
-
 ## Database
 
 The application uses SQLite as the database engine.
