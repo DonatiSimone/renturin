@@ -133,7 +133,17 @@ Main dependencies used in the project:
 
 ## Screenshots
 
-<img width="2583" height="1096" alt="image" src="https://github.com/user-attachments/assets/c210d669-3dd4-4a61-8706-804d8bf0c397" />
+<img width="3409" height="1210" alt="image" src="https://github.com/user-attachments/assets/af31d448-ca1b-48d6-8c5f-3cb3e9e33dde" />
+
+<img width="3394" height="1207" alt="image" src="https://github.com/user-attachments/assets/4a326c6d-0565-4b34-bb75-2d2259043e50" />
+
+<img width="3402" height="1219" alt="image" src="https://github.com/user-attachments/assets/d78787b6-37d9-4398-9e82-272b9db7d9e8" />
+
+<img width="3390" height="1210" alt="image" src="https://github.com/user-attachments/assets/ae41d34a-0839-4871-885a-ac2fda2430e8" />
+
+<img width="3409" height="1214" alt="image" src="https://github.com/user-attachments/assets/da0800a1-e234-41dc-8676-7e5c69db8d8c" />
+
+
 
 
 ## Author
