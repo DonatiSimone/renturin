@@ -131,6 +131,11 @@ Main dependencies used in the project:
 
 ---
 
+## Screenshots
+
+<img width="2583" height="1096" alt="image" src="https://github.com/user-attachments/assets/c210d669-3dd4-4a61-8706-804d8bf0c397" />
+
+
 ## Author
 
 Simone Donati
